@@ -10,6 +10,8 @@
     android:background="@drawable/blurry_back"
     tools:context=".ChoiceActivity">
 
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +19,7 @@
         android:fontFamily="@font/poppins_bold"
         android:layout_marginTop="@dimen/_80sdp"
         android:textColor="@color/white"
-        android:textSize="32sp"/>
+        android:textSize="@dimen/_22ssp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_customer"

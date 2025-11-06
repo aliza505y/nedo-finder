@@ -30,6 +30,9 @@ class MainActivity : AppCompatActivity() {
         val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
         windowInsetsController.isAppearanceLightStatusBars = true*/
 
+
+        print("Hello world!!")
+
         val navigateTo = intent.getStringExtra("NAVIGATE_TO")
         if (navigateTo == "PROFILE_FRAGMENT") {
             loadFragment(ProfileFragment())
