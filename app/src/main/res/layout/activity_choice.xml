@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@drawable/blurry_back"
+    tools:context=".ChoiceActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choice"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:textColor="@color/white"
+        android:textSize="32sp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_customer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_110sdp"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:background="@drawable/choice_back"
+        android:layout_marginHorizontal="@dimen/_20sdp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:src="@drawable/bag"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/customer"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/find_local"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_owner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_110sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@drawable/choice_back"
+        android:layout_marginHorizontal="@dimen/_20sdp">
+
+        <ImageView
+            android:id="@+id/shop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:src="@drawable/shop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/owner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/owner"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintStart_toEndOf="@+id/shop"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/manage"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintStart_toStartOf="@+id/owner"
+            app:layout_constraintTop_toBottomOf="@+id/owner" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>

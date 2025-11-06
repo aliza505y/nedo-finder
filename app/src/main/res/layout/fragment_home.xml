@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/grey1"
+    tools:context=".fragment.HomeFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/nedofinder"
+        android:textColor="@color/blackScreen"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:elevation="10dp"
+        android:gravity="center_vertical"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_7sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/search_leading_icon"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:src="@drawable/ic_search_grey"
+            app:tint="@color/grey" />
+        <EditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins"
+            android:hint="@string/search_nearby_shops_or_services"
+            android:background="@android:color/transparent"
+            android:singleLine="true"
+            android:imeOptions="actionSearch"
+            android:paddingVertical="@dimen/_2sdp"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey" />
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="@dimen/_43sdp"
+            android:padding="@dimen/_8sdp"
+            android:layout_height="match_parent"
+            android:background="@drawable/search_back"
+            android:src="@drawable/ic_search_white"
+            app:tint="@color/white" />
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Nearby Shops"
+                android:textColor="@color/greyScreen"
+                android:textSize="@dimen/_18ssp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="@dimen/_25sdp"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="@dimen/_14ssp"
+                    android:text="Select country"/>
+
+                <Spinner
+                    android:id="@+id/mySpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:imeOptions="actionDone"
+                    android:entries="@array/spinner_items" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/all_shops_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/all_shop_design_file"
+                app:spanCount="2"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

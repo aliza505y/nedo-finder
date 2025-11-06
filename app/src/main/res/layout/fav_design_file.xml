@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fav_store_img"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:contentDescription="Shop Image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/store_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/fav_profile_img"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/profile_8"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/fav_store_img"
+                app:layout_constraintBottom_toBottomOf="@id/fav_store_img"
+                app:layout_constraintStart_toStartOf="@id/fav_store_img"/>
+
+            <TextView
+                android:id="@+id/fav_store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:textColor="@color/blackScreen"
+                android:fontFamily="@font/poppins_bold"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintStart_toStartOf="@id/fav_profile_img"
+                app:layout_constraintTop_toBottomOf="@id/fav_profile_img"
+                tools:text="Kirana Storesfont" />
+
+            <TextView
+                android:id="@+id/fav_store_category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/fav_store_name"
+                app:layout_constraintStart_toStartOf="@+id/fav_store_name"
+                app:layout_constraintTop_toBottomOf="@id/fav_store_name"
+                tools:text="Grocery, Daily Needs" />
+
+            <ImageView
+                android:id="@+id/favoriteHeartIcon"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="@drawable/rounded_white_circle"
+                android:contentDescription="Favorite Status"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/fill_heart"
+                app:tint="@color/greyScreen"
+                app:layout_constraintEnd_toEndOf="@id/fav_store_img"
+                app:layout_constraintTop_toTopOf="@id/fav_store_img" />
+
+            <TextView
+                android:id="@+id/fav_shop_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/baseline_star_outline_24"
+                android:src="@drawable/star_rate"
+                android:text="4.5"
+                android:textStyle="bold"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@id/fav_store_img"
+                app:layout_constraintTop_toBottomOf="@id/fav_store_img"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey1"
+    tools:context=".fragment.ProfileFragment">
+
+    <TextView
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/blackScreen"
+        android:text="Profile"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ownerProfileImage"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:contentDescription="Owner Profile Picture"
+                android:padding="0dp"
+                android:src="@drawable/profile_7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ownerNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Doe"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_16ssp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/blackScreen"
+                app:layout_constraintEnd_toEndOf="@+id/ownerProfileImage"
+                app:layout_constraintStart_toStartOf="@+id/ownerProfileImage"
+                app:layout_constraintTop_toBottomOf="@+id/ownerProfileImage"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/ownerRoleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Shop Owner"
+                app:layout_constraintEnd_toEndOf="@+id/ownerNameTextView"
+                app:layout_constraintStart_toStartOf="@+id/ownerNameTextView"
+                app:layout_constraintTop_toBottomOf="@id/ownerNameTextView" />
+
+            <TextView
+                android:id="@+id/myShopsTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:text="My Shops"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ownerRoleTextView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ownerShopsRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/myShopsTitle"
+                tools:itemCount="2"
+                tools:layout_editor_absoluteX="0dp"
+                tools:listitem="@layout/manage_store_design" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addNewShopCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:contentPadding="@dimen/_11sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ownerShopsRecyclerView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:contentDescription="Add New Shop Icon"
+                        android:src="@drawable/ic_add_circle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:text="Add New Shop"
+                        android:fontFamily="@font/poppins_bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/generalTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:text="General"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addNewShopCard" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/switchLanguageCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:contentPadding="@dimen/_11sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/generalTitle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:contentDescription="switch"
+                        android:src="@drawable/chage" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:text="Switch account"
+                        android:fontFamily="@font/poppins"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/settingsCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:contentPadding="@dimen/_11sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/switchLanguageCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:contentDescription="setting"
+                        android:src="@drawable/outline_settings_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Settings" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

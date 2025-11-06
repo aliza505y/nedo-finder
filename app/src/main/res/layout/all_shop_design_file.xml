@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_12sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:elevation="@dimen/_6sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/all_shop_img"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_110sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/store_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/all_shop_profile_image"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/profile_7"
+                android:layout_marginStart="@dimen/_8sdp"
+                app:civ_border_width="@dimen/_1sdp"
+                app:civ_border_color="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/all_shop_img"
+                app:layout_constraintStart_toStartOf="@+id/all_shop_img"
+                app:layout_constraintTop_toBottomOf="@+id/all_shop_img" />
+
+            <TextView
+                android:id="@+id/all_shop_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:text="Hadi Kiryana store"
+                android:textColor="@color/blackScreen"
+                app:layout_constraintStart_toStartOf="@id/all_shop_profile_image"
+                app:layout_constraintTop_toBottomOf="@id/all_shop_profile_image" />
+
+            <TextView
+                android:id="@+id/all_store_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grocery,Daily Need"
+                android:maxLines="1"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/greyScreen"
+                app:layout_constraintStart_toStartOf="@+id/all_shop_name"
+                app:layout_constraintTop_toBottomOf="@+id/all_shop_name" />
+
+            <TextView
+                android:id="@+id/all_stop_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Street/20km stand"
+                android:maxLines="1"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/greyScreen"
+                app:layout_constraintTop_toBottomOf="@id/all_store_category"
+                app:layout_constraintStart_toStartOf="@id/all_store_category"/>
+
+
+            <TextView
+                android:id="@+id/all_shop_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/baseline_star_outline_24"
+                android:src="@drawable/star_rate"
+                android:text="4.5"
+                android:textStyle="bold"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/all_shop_img"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/all_shop_fav"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="@drawable/rounded_white_circle"
+                android:contentDescription="Favorite Status"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/outline_favorite_24"
+                app:tint="@color/greyScreen"
+                app:layout_constraintTop_toTopOf="@id/all_shop_img"
+                app:layout_constraintEnd_toEndOf="@id/all_shop_img"/>
+
+            <!--<androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/all_shopView_btn"
+                android:layout_width="95dp"
+                android:layout_height="30dp"
+                android:background="@drawable/background_circle"
+                android:layout_marginEnd="12dp"
+                android:layout_marginVertical="8dp"
+                android:text="View Shop"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

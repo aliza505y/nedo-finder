@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#6A6969</color>
+    <color name="grey1">#F1F2F4</color>
+    <color name="greyScreen">#4D4C4C</color>
+    <color name="blackScreen">#1B1B1B</color>
+    <color name="blue">#3574F0</color>
+    <color name="dark_blue">#0B54E6</color>
+    <color name="mid_purple">#5E08DC</color>
+    <color name="purpule">#643BA0</color>
+    <color name="blue_screen_back">#E6F0FA</color>
+
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_700">#616161</color>
+    <color name="primary_blue">#4A90E2</color>
+    <color name="primary_blue_dark">#3F51B5</color>
+    <color name="accent_color">#FF4081</color>
+    <color name="background_light_grey">#F5F5F5</color>
+
+</resources>

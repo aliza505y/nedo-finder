@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:elevation="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/manage_shop_img"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:scaleType="centerCrop"
+                app:riv_corner_radius="@dimen/_5sdp"
+                android:src="@drawable/store_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/manage_shop_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Shop Name"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/blackScreen"
+                app:layout_constraintStart_toEndOf="@+id/manage_shop_img"
+                app:layout_constraintTop_toTopOf="@id/manage_shop_img" />
+
+            <TextView
+                android:id="@+id/manage_store_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grocery,Daily Need"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toStartOf="@+id/manage_shop_name"
+                app:layout_constraintTop_toBottomOf="@+id/manage_shop_name" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/all_shopView_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:paddingHorizontal="@dimen/_14sdp"
+                android:background="@drawable/background"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text="Manage Shop"
+                android:textAppearance="@font/poppins_bold"
+                android:textSize="@dimen/_10ssp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

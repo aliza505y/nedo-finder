@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_screen_back"
+    tools:context=".FinalizeShopActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3. Finalize and Publish"
+        android:layout_marginTop="10dp"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:elevation="5dp"
+        android:layout_marginHorizontal="20dp"
+        app:cardCornerRadius="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/roundedImageView2"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_marginStart="15dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/store_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="10dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/kiryana_storefont"
+                android:textColor="@color/black"
+                android:layout_marginBottom="30dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/roundedImageView2"
+                app:layout_constraintStart_toEndOf="@+id/roundedImageView2"
+                app:layout_constraintTop_toTopOf="@+id/roundedImageView2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/grocery_tailor"
+                android:textColor="@color/grey"
+                app:layout_constraintStart_toStartOf="@id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:elevation="5dp"
+        android:layout_marginHorizontal="20dp"
+        app:cardCornerRadius="10dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/map_img"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/img_2"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="@string/kiryana"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/map_img"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="15dp" />
+
+            <TextView
+                android:id="@+id/store_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/grocery"
+                android:textColor="@color/grey"
+                app:layout_constraintStart_toStartOf="@id/store_name"
+                app:layout_constraintTop_toBottomOf="@+id/store_name" />
+
+            <TextView
+                android:id="@+id/store_owner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/john_doe"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@id/store_name"
+                app:layout_constraintStart_toStartOf="@id/store_name"/>
+
+            <TextView
+                android:id="@+id/owner_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0386267526"
+                android:textColor="@color/grey"
+                app:layout_constraintStart_toStartOf="@id/store_owner"
+                app:layout_constraintTop_toBottomOf="@+id/store_owner" />
+
+            <TextView
+                android:id="@+id/store_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lahore_model_town"
+                android:textColor="@color/grey"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@id/store_owner"
+                app:layout_constraintStart_toStartOf="@id/store_name"/>
+
+            <TextView
+                android:id="@+id/store_street"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/street_2_9_right_core_of_plaza"
+                android:textColor="@color/grey"
+                android:layout_marginBottom="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/store_city"
+                app:layout_constraintTop_toBottomOf="@+id/store_city" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginStart="15dp"
+            android:text="@string/approve_for_publishing"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            app:thumbTint="@color/white"
+            app:trackTint="@color/blue"
+            android:thumb="@drawable/thumb"
+            app:track="@drawable/track" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/publish_shop_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/background"
+        android:padding="15dp"
+        android:text="@string/publish_shop"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>

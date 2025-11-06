@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/grey1"
+    tools:context=".fragment.AddLocationFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back_button_locate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/_50sdp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="@string/set_location"
+            android:textColor="@color/blackScreen"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintStart_toEndOf="@+id/back_button_locate"
+            app:layout_constraintTop_toTopOf="@+id/back_button_locate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_shop_location"
+                android:padding="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:gravity="center_horizontal"
+                android:elevation="@dimen/_4sdp"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/greyScreen"
+                android:background="@drawable/textback"
+                android:drawablePadding="@dimen/_20sdp"
+                android:layout_gravity="center_horizontal"
+                app:drawableTopCompat="@drawable/outline_add_location_24" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/street_address"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_11sdp"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:elevation="@dimen/_4sdp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/greyScreen"
+                android:background="@drawable/textback"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/city_area"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_11sdp"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:elevation="@dimen/_4sdp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/greyScreen"
+                android:background="@drawable/textback"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_number"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_11sdp"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:elevation="@dimen/_4sdp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/greyScreen"
+                android:background="@drawable/textback"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/procedd_finalize_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="@drawable/background"
+                android:padding="@dimen/_11sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/procede_to_finalize"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.NedoFinder" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="NoActiveIndicatorStyle">
+        <item name="android:color">@android:color/transparent</item>
+        <item name="android:alpha">0.0</item>
+    </style>
+
+    <style name="Theme.NedoFinder" parent="Base.Theme.NedoFinder" />
+</resources>

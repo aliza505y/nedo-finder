@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/grey1"
+    tools:context=".fragment.AddShopFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_shop"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textSize="@dimen/_20ssp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/blackScreen"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/shop_photo"
+                android:padding="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:gravity="center_horizontal"
+                android:elevation="@dimen/_4sdp"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/greyScreen"
+                android:background="@drawable/textback"
+                android:drawablePadding="@dimen/_20sdp"
+                android:layout_gravity="center_horizontal"
+                app:drawableTopCompat="@drawable/baseline_photo_camera_24" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/shop_name"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_11sdp"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:elevation="@dimen/_4sdp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/greyScreen"
+                android:background="@drawable/textback"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/shop_category"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_11sdp"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:elevation="@dimen/_4sdp"
+                android:fontFamily="@font/poppins"
+                android:background="@drawable/textback"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/owner_s_name"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_11sdp"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:elevation="@dimen/_4sdp"
+                android:fontFamily="@font/poppins"
+                android:background="@drawable/textback"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Shop Description(one or two lines)"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_11sdp"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:elevation="@dimen/_4sdp"
+                android:fontFamily="@font/poppins"
+                android:background="@drawable/textback"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/procedd_to_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/background"
+                android:padding="@dimen/_11sdp"
+                android:text="Next"
+                android:fontFamily="@font/poppins_bold"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

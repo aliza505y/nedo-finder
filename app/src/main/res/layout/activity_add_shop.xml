@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/grey1"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddShopActivity"
+    tools:ignore="ExtraText">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_shop"
+        android:layout_marginTop="5dp"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/shop_photo"
+        android:padding="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center_horizontal"
+        android:elevation="4dp"
+        android:background="@drawable/textback"
+        android:drawablePadding="20sp"
+        android:layout_gravity="center_horizontal"
+        app:drawableTopCompat="@drawable/baseline_photo_camera_24" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/shop_name"
+        android:layout_marginTop="20sp"
+        android:padding="15dp"
+        android:layout_marginHorizontal="20dp"
+        android:elevation="4dp"
+        android:background="@drawable/textback"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/shop_category"
+        android:layout_marginTop="20sp"
+        android:padding="15dp"
+        android:layout_marginHorizontal="20dp"
+        android:elevation="4dp"
+        android:background="@drawable/textback"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/owner_s_name"
+        android:layout_marginTop="20sp"
+        android:padding="15dp"
+        android:layout_marginHorizontal="20dp"
+        android:elevation="4dp"
+        android:background="@drawable/textback"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_location"
+        android:layout_marginTop="30dp"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_shop_location"
+        android:padding="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center_horizontal"
+        android:elevation="4dp"
+        android:background="@drawable/textback"
+        android:drawablePadding="20sp"
+        android:layout_gravity="center_horizontal"
+        app:drawableTopCompat="@drawable/outline_add_location_24" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/street_address"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"
+        android:layout_marginHorizontal="20dp"
+        android:elevation="4dp"
+        android:background="@drawable/textback"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/city_area"
+        android:layout_marginTop="20sp"
+        android:padding="15dp"
+        android:layout_marginHorizontal="20dp"
+        android:elevation="4dp"
+        android:background="@drawable/textback"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone_number"
+        android:layout_marginTop="20sp"
+        android:padding="15dp"
+        android:inputType="phone"
+        android:layout_marginHorizontal="20dp"
+        android:elevation="4dp"
+        android:background="@drawable/textback"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/procedd_finalize_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/background"
+                android:padding="15dp"
+                android:text="@string/procede_to_finalize"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
