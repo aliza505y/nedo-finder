@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         print("Hello world!!")
         print("Hello world!!")
         print("Hello world!!")
+        print("Hello world!!")
 
         val navigateTo = intent.getStringExtra("NAVIGATE_TO")
         if (navigateTo == "PROFILE_FRAGMENT") {
