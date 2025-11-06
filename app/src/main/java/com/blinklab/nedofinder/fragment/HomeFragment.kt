@@ -49,7 +49,6 @@ class HomeFragment : Fragment() {
         arrayList.add(AllShopDataClass(R.drawable.store_1,R.drawable.profile_8, "Kiryana Stores", "Category", "Street/20km stand","3.3"))
         arrayList.add(AllShopDataClass(R.drawable.store_3,R.drawable.profile_9, "Electronics", "Category", "Street/20km stand","5.0"))
 
-
         return binding.root
     }
 

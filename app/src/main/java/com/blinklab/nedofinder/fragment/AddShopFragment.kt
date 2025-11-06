@@ -24,9 +24,6 @@ class AddShopFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
-
-
-
         return binding.root
 
     }

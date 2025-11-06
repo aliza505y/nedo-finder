@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.blinklab.nedofinder.databinding.ActivityFinalizeShopBinding
-
 class FinalizeShopActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFinalizeShopBinding
     override fun onCreate(savedInstanceState: Bundle?) {

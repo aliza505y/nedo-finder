@@ -26,7 +26,6 @@ class ProfileFragment : Fragment() {
     ): View? {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
-
         /*val window = requireActivity().window
         window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.blackScreen)
         WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars = false*/

@@ -20,7 +20,6 @@ class PublishShopFragment : Fragment() {
         binding.backButtonPublish.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
-
         return binding.root
     }
 }

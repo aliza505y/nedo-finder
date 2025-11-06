@@ -18,7 +18,6 @@
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/blackScreen"
         android:layout_gravity="center_horizontal"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

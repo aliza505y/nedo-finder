@@ -103,7 +103,6 @@
                 android:textColor="@color/white" />
 
         </LinearLayout>
-
     </ScrollView>
 
 </LinearLayout>

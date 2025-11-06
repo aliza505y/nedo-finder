@@ -42,7 +42,6 @@ class ViewShopActivity : AppCompatActivity() {
         reviewList.add(ReviewDataClass(R.drawable.profile_7,"John Cena","2 Days ago","Awesome selection and friendly staff! Recomended store for all of your daily needs"))
         reviewList.add(ReviewDataClass(R.drawable.profile_9,"John Cena","2 Days ago","Awesome selection and friendly staff! Recomended store for all of your daily needs"))
         reviewList.add(ReviewDataClass(R.drawable.profile_8,"John Cena","2 Days ago","Awesome selection and friendly staff! Recomended store for all of your daily needs"))
-        reviewList.add(ReviewDataClass(R.drawable.profile_9,"John Cena","2 Days ago","Awesome selection and friendly staff! Recomended store for all of your daily needs"))
-*/
+        reviewList.add(ReviewDataClass(R.drawable.profile_9,"John Cena","2 Days ago","Awesome selection and friendly staff! Recomended store for all of your daily needs"))*/
     }
 }

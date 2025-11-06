@@ -24,7 +24,6 @@ class ChoiceActivity : AppCompatActivity() {
         }
         val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
         windowInsetsController.isAppearanceLightStatusBars = false
-
         binding.constraintOwner.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }

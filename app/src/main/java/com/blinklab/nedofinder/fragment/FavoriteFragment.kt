@@ -31,7 +31,6 @@ class FavoriteFragment : Fragment() {
         favList.add(FavDataClass(R.drawable.store_5, R.drawable.profile_4,"Khizar Hayat","Grocery","4.6"))
         favList.add(FavDataClass(R.drawable.store_3, R.drawable.profile_8,"Khizar Hayat","Grocery","4.5"))
         favList.add(FavDataClass(R.drawable.store_1, R.drawable.profile_8,"Khizar Hayat","Grocery","4.2"))
-
         return binding.root
     }
 }

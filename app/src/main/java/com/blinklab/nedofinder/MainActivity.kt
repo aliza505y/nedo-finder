@@ -26,11 +26,14 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
-       /* window.statusBarColor = ContextCompat.getColor(this, R.color.greyScreen )
+        /* window.statusBarColor = ContextCompat.getColor(this, R.color.greyScreen )
         val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
         windowInsetsController.isAppearanceLightStatusBars = true*/
 
 
+        print("Hello world!!")
+        print("Hello world!!")
+        print("Hello world!!")
         print("Hello world!!")
 
         val navigateTo = intent.getStringExtra("NAVIGATE_TO")
@@ -40,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             loadFragment(HomeFragment())
         }
-       /* loadFragment(HomeFragment())*/
+        /* loadFragment(HomeFragment())*/
         binding.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {

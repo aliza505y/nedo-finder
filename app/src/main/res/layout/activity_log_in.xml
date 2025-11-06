@@ -148,6 +148,4 @@
         android:fontFamily="@font/poppins_bold"
         android:layout_gravity="center_horizontal"/>
 
-
-
 </LinearLayout>
