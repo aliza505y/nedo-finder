@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     tools:context=".AddShopActivity"
     tools:ignore="ExtraText">
-
+<!--
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -142,5 +142,5 @@
 
 
         </LinearLayout>
-    </ScrollView>
+    </ScrollView>-->
 </LinearLayout>

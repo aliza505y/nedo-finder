@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_1sdp"
-                android:textColor="@color/blackScreen"
+                android:textColor="@color/black"
                 android:fontFamily="@font/poppins_bold"
                 android:ellipsize="end"
                 android:maxLines="1"
@@ -63,7 +63,6 @@
                 android:layout_marginBottom="@dimen/_5sdp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textColor="@color/grey"
                 android:fontFamily="@font/poppins"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/fav_store_name"
@@ -80,7 +79,7 @@
                 android:contentDescription="Favorite Status"
                 android:padding="@dimen/_3sdp"
                 android:src="@drawable/fill_heart"
-                app:tint="@color/greyScreen"
+                app:tint="@color/blue"
                 app:layout_constraintEnd_toEndOf="@id/fav_store_img"
                 app:layout_constraintTop_toTopOf="@id/fav_store_img" />
 
@@ -89,7 +88,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/baseline_star_outline_24"
-                android:src="@drawable/star_rate"
                 android:text="4.5"
                 android:textStyle="bold"
                 android:layout_marginEnd="@dimen/_10sdp"

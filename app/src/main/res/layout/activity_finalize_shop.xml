@@ -6,8 +6,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_screen_back"
     tools:context=".FinalizeShopActivity">
+<!--
 
     <TextView
         android:layout_width="wrap_content"
@@ -196,6 +196,7 @@
         android:text="@string/publish_shop"
         android:textAllCaps="false"
         android:textColor="@color/white" />
+-->
 
 
 </LinearLayout>

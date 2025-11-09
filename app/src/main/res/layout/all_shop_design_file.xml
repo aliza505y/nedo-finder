@@ -49,7 +49,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:maxLines="1"
                 android:text="Hadi Kiryana store"
-                android:textColor="@color/blackScreen"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="@id/all_shop_profile_image"
                 app:layout_constraintTop_toBottomOf="@id/all_shop_profile_image" />
 
@@ -61,7 +61,6 @@
                 android:maxLines="1"
                 android:ellipsize="marquee"
                 android:fontFamily="@font/poppins"
-                android:textColor="@color/greyScreen"
                 app:layout_constraintStart_toStartOf="@+id/all_shop_name"
                 app:layout_constraintTop_toBottomOf="@+id/all_shop_name" />
 
@@ -73,7 +72,6 @@
                 android:maxLines="1"
                 android:ellipsize="marquee"
                 android:fontFamily="@font/poppins"
-                android:textColor="@color/greyScreen"
                 app:layout_constraintTop_toBottomOf="@id/all_store_category"
                 app:layout_constraintStart_toStartOf="@id/all_store_category"/>
 
@@ -83,7 +81,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/baseline_star_outline_24"
-                android:src="@drawable/star_rate"
                 android:text="4.5"
                 android:textStyle="bold"
                 android:layout_marginEnd="@dimen/_10sdp"
@@ -99,7 +96,7 @@
                 android:contentDescription="Favorite Status"
                 android:padding="@dimen/_2sdp"
                 android:src="@drawable/outline_favorite_24"
-                app:tint="@color/greyScreen"
+                app:tint="@color/blue"
                 app:layout_constraintTop_toTopOf="@id/all_shop_img"
                 app:layout_constraintEnd_toEndOf="@id/all_shop_img"/>
 

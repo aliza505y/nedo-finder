@@ -40,7 +40,7 @@
                 android:layout_marginStart="@dimen/_8sdp"
                 android:text="Shop Name"
                 android:fontFamily="@font/poppins_bold"
-                android:textColor="@color/blackScreen"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/manage_shop_img"
                 app:layout_constraintTop_toTopOf="@id/manage_shop_img" />
 

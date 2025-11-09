@@ -31,7 +31,7 @@
             android:fontFamily="@font/poppins_bold"
             android:gravity="center"
             android:text="@string/set_location"
-            android:textColor="@color/blackScreen"
+            android:textColor="@color/blue"
             android:textSize="@dimen/_20ssp"
             app:layout_constraintStart_toEndOf="@+id/back_button_locate"
             app:layout_constraintTop_toTopOf="@+id/back_button_locate" />
@@ -59,7 +59,6 @@
                 android:elevation="@dimen/_4sdp"
                 android:ellipsize="marquee"
                 android:fontFamily="@font/poppins"
-                android:textColor="@color/greyScreen"
                 android:background="@drawable/textback"
                 android:drawablePadding="@dimen/_20sdp"
                 android:layout_gravity="center_horizontal"
@@ -74,7 +73,6 @@
                 android:layout_marginHorizontal="@dimen/_18sdp"
                 android:elevation="@dimen/_4sdp"
                 android:fontFamily="@font/poppins"
-                android:textColor="@color/greyScreen"
                 android:background="@drawable/textback"/>
 
             <EditText
@@ -86,7 +84,6 @@
                 android:layout_marginHorizontal="@dimen/_18sdp"
                 android:elevation="@dimen/_4sdp"
                 android:fontFamily="@font/poppins"
-                android:textColor="@color/greyScreen"
                 android:background="@drawable/textback"/>
 
             <EditText
@@ -98,7 +95,6 @@
                 android:layout_marginHorizontal="@dimen/_18sdp"
                 android:elevation="@dimen/_4sdp"
                 android:fontFamily="@font/poppins"
-                android:textColor="@color/greyScreen"
                 android:background="@drawable/textback"/>
 
             <androidx.appcompat.widget.AppCompatButton

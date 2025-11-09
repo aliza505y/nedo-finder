@@ -26,7 +26,7 @@ class ViewShopActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        window.statusBarColor = ContextCompat.getColor(this, R.color.blackScreen)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.blue)
         val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
         windowInsetsController.isAppearanceLightStatusBars = false
 

@@ -14,7 +14,7 @@
         android:layout_marginStart="@dimen/_20sdp"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/nedofinder"
-        android:textColor="@color/blackScreen"
+        android:textColor="@color/blue"
         android:textSize="@dimen/_20ssp"
         android:textStyle="bold" />
     <androidx.cardview.widget.CardView
@@ -76,7 +76,6 @@
                 android:layout_marginTop="@dimen/_3sdp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Nearby Shops"
-                android:textColor="@color/greyScreen"
                 android:textSize="@dimen/_18ssp" />
 
             <LinearLayout
