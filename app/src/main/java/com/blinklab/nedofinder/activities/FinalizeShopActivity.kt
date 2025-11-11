@@ -20,11 +20,5 @@ class FinalizeShopActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.publishShopBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("NAVIGATE_TO", "PROFILE_FRAGMENT")
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
-        }
     }
 }

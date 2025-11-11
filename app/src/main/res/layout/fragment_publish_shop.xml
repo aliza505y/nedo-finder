@@ -26,7 +26,7 @@
         android:layout_marginStart="@dimen/_20sdp"
         android:fontFamily="@font/poppins_bold"
         android:text="3. Finalize and Publish"
-        android:textColor="@color/blackScreen"
+        android:textColor="@color/blue"
         android:textSize="@dimen/_20ssp"
         app:layout_constraintBottom_toBottomOf="@+id/back_button_publish"
         app:layout_constraintStart_toEndOf="@id/back_button_publish"
@@ -83,7 +83,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/grocery_tailor"
                 android:fontFamily="@font/poppins"
-                android:textColor="@color/greyScreen"
                 app:layout_constraintStart_toStartOf="@id/textView5"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -131,7 +130,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/grocery"
                 android:fontFamily="@font/poppins"
-                android:textColor="@color/greyScreen"
                 app:layout_constraintStart_toStartOf="@id/store_name"
                 app:layout_constraintTop_toBottomOf="@+id/store_name" />
 
@@ -153,7 +151,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/_0386267526"
                 android:fontFamily="@font/poppins"
-                android:textColor="@color/greyScreen"
                 app:layout_constraintStart_toStartOf="@id/store_owner"
                 app:layout_constraintTop_toBottomOf="@+id/store_owner" />
 
@@ -163,7 +160,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/lahore_model_town"
                 android:fontFamily="@font/poppins"
-                android:textColor="@color/greyScreen"
                 android:layout_marginTop="@dimen/_25sdp"
                 app:layout_constraintTop_toBottomOf="@id/store_owner"
                 app:layout_constraintStart_toStartOf="@id/store_name"/>
@@ -174,7 +170,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/street_2_9_right_core_of_plaza"
                 android:fontFamily="@font/poppins"
-                android:textColor="@color/greyScreen"
                 android:layout_marginBottom="@dimen/_15sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@id/store_city"
@@ -203,8 +198,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_30sdp"
-            app:thumbTint="@color/blackScreen"
-            app:trackTint="@color/greyScreen"
+            app:thumbTint="@color/white"
+            app:trackTint="@color/blue"
             android:thumb="@drawable/thumb"
             app:track="@drawable/track" />
     </LinearLayout>
