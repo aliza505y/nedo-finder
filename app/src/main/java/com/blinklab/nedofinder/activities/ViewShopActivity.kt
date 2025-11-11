@@ -1,4 +1,4 @@
-package com.blinklab.nedofinder
+package com.blinklab.nedofinder.activities
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import com.blinklab.nedofinder.R
 import com.blinklab.nedofinder.adapter.ReviewAdapter
 import com.blinklab.nedofinder.databinding.ActivityViewShopBinding
 import com.blinklab.nedofinder.dataclass.ReviewDataClass
@@ -26,13 +27,13 @@ class ViewShopActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        window.statusBarColor = ContextCompat.getColor(this, R.color.blackScreen)
-        val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
-        windowInsetsController.isAppearanceLightStatusBars = false
 
-        binding.backArrow.setOnClickListener {
+
+       /* binding.backArrow.setOnClickListener {
             finish()
-        }
+        }*/
+
+
         /*reviewAdapter = ReviewAdapter(reviewList)
         binding.reviewRecycler.adapter = reviewAdapter
         reviewList.add(ReviewDataClass(R.drawable.profile_8,"John Cena","2 Days ago","Awesome selection and friendly staff! Recomended store for all of your daily needs"))

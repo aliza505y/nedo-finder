@@ -6,10 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.core.view.WindowCompat
-import com.blinklab.nedofinder.AddShopActivity
 import com.blinklab.nedofinder.R
+import com.blinklab.nedofinder.activities.AddShopActivity
 import com.blinklab.nedofinder.adapter.ManageShopAdapter
 import com.blinklab.nedofinder.databinding.FragmentProfileBinding
 import com.blinklab.nedofinder.dataclass.ManageDataClass
@@ -26,10 +24,6 @@ class ProfileFragment : Fragment() {
     ): View? {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
-        /*val window = requireActivity().window
-        window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.blackScreen)
-        WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars = false*/
-
         binding.ownerShopsRecyclerView.setHasFixedSize(true)
         arrayList = ArrayList()
         adapter = ManageShopAdapter(arrayList)
@@ -39,7 +33,7 @@ class ProfileFragment : Fragment() {
         arrayList.add(ManageDataClass(R.drawable.store_3,"Kiryana Stores","Category"  ))
 
         binding.addNewShopCard.setOnClickListener {
-            startActivity(Intent(context, AddShopActivity::class.java))
+            startActivity(Intent(requireActivity(), AddShopActivity::class.java))
         }
 
         return binding.root

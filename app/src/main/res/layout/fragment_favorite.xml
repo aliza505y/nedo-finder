@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/grey1"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".fragment.FavoriteFragment">
 
@@ -12,17 +12,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/my_favorite_shops"
-        android:textSize="24sp"
+        android:textSize="@dimen/_20ssp"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="start"
+        android:layout_margin="@dimen/_14sdp"
         android:textColor="@color/black" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/favorite_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
         tools:listitem="@layout/fav_design_file"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2" />
+         />
 
 </LinearLayout>

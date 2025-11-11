@@ -229,4 +229,20 @@
         <item>Zimbabwe</item>
     </string-array>
 
+
+    <string-array name="shop_categories">
+        <item>Select shop category</item>
+        <item>Barber / Salon</item>
+        <item>Clothing Store</item>
+        <item>Shoe Store</item>
+        <item>Grocery Store</item>
+        <item>Restaurant / Fast Food</item>
+        <item>Mobile Repair</item>
+        <item>Electrician</item>
+        <item>Plumber</item>
+        <item>Pharmacy</item>
+        <item>Others</item>
+    </string-array>
+
+
 </resources>

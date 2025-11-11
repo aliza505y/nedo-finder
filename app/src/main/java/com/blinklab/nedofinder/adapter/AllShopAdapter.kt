@@ -6,23 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import com.blinklab.nedofinder.dataclass.AllShopDataClass
 import com.blinklab.nedofinder.R
-import com.blinklab.nedofinder.ViewShopActivity
+import com.blinklab.nedofinder.activities.ViewShopActivity
 import de.hdodenhof.circleimageview.CircleImageView
 
 class AllShopAdapter(private val allList: ArrayList<AllShopDataClass>) :
     RecyclerView.Adapter<AllShopAdapter.ViewHolder>(){
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageViewAll = itemView.findViewById<ImageView>(R.id.all_shop_img)
-        val nameAll = itemView.findViewById<TextView>(R.id.all_shop_name)
-        val categoryAll = itemView.findViewById<TextView>(R.id.all_store_category)
-        val addressAll = itemView.findViewById<TextView>(R.id.all_stop_address)
-        val pImageAll = itemView.findViewById<CircleImageView>(R.id.all_shop_profile_image)
-        val imageReview = itemView.findViewById<TextView>(R.id.all_shop_review)
+        val imageViewAll = itemView.findViewById<ImageView>(R.id.shop_image)
+        val nameAll = itemView.findViewById<TextView>(R.id.shop_name)
+        val categoryAll = itemView.findViewById<TextView>(R.id.shop_category)
+        val addressAll = itemView.findViewById<TextView>(R.id.shop_address)
+        val pImageAll = itemView.findViewById<CircleImageView>(R.id.owner_image)
+        val imageReview = itemView.findViewById<TextView>(R.id.shop_rating)
 /*
         val shopViewBtn = itemView.findViewById<AppCompatButton>(R.id.all_shopView_btn)
 */

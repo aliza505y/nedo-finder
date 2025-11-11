@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.blinklab.nedofinder.dataclass.FavDataClass
 import com.blinklab.nedofinder.R
-import com.blinklab.nedofinder.ViewShopActivity
+import com.blinklab.nedofinder.activities.ViewShopActivity
 import de.hdodenhof.circleimageview.CircleImageView
 
 class FavAdapter (private val mList: ArrayList<FavDataClass>)

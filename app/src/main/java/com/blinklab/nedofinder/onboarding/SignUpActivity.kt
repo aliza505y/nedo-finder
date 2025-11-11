@@ -6,7 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.blinklab.nedofinder.MainActivity
+import com.blinklab.nedofinder.activities.MainActivity
 import com.blinklab.nedofinder.R
 import com.blinklab.nedofinder.databinding.ActivitySignUpBinding
 

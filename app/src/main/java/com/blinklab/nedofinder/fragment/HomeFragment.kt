@@ -1,5 +1,7 @@
 package com.blinklab.nedofinder.fragment
 
+import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.appcompat.widget.SearchView
 import com.blinklab.nedofinder.adapter.AllShopAdapter
 import com.blinklab.nedofinder.dataclass.AllShopDataClass
 import com.blinklab.nedofinder.R
@@ -26,14 +29,8 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
 
-        val mySpinner: Spinner = binding.mySpinner
-        ArrayAdapter.createFromResource(requireContext(), R.array.spinner_items, R.layout.spinner_font_item)
-            .also { adapter ->
-                adapter.setDropDownViewResource(R.layout.spinner_font_item)
-                mySpinner.adapter = adapter
-            }
 
-
+        setupSearchView()
 
         binding.allShopsRecycler.setHasFixedSize(true)
         arrayList = ArrayList()
@@ -51,5 +48,33 @@ class HomeFragment : Fragment() {
 
         return binding.root
     }
+    @SuppressLint("RestrictedApi")
+    private fun setupSearchView() {
+        val searchView = binding.searchView1
+        searchView.setIconifiedByDefault(false)
+        searchView.isIconified = false
+        searchView.clearFocus()
 
+        val searchEditText = searchView.findViewById<SearchView.SearchAutoComplete>(
+            androidx.appcompat.R.id.search_src_text
+        )
+        searchEditText.hint = "Search Shops in city..."
+        searchEditText.isCursorVisible = true
+
+        searchEditText.setTextColor(Color.BLACK)
+        searchEditText.setHintTextColor(Color.GRAY)
+
+        searchView.setOnClickListener {
+            searchView.isIconified = false
+            searchView.requestFocusFromTouch()
+        }
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean = false
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                return true
+            }
+        })
+    }
 }

@@ -6,7 +6,6 @@
     <color name="grey1">#F1F2F4</color>
     <color name="greyScreen">#4D4C4C</color>
     <color name="blackScreen">#1B1B1B</color>
-    <color name="blue">#3574F0</color>
     <color name="dark_blue">#0B54E6</color>
     <color name="mid_purple">#5E08DC</color>
     <color name="purpule">#643BA0</color>
@@ -18,5 +17,12 @@
     <color name="primary_blue_dark">#3F51B5</color>
     <color name="accent_color">#FF4081</color>
     <color name="background_light_grey">#F5F5F5</color>
+    <color name="dark_grey">#6E6E6E</color>
+
+
+    <color name="ripple_grey_light">#22000000</color>
+    <color name="ripple_grey_medium">#33000000</color>
+    <color name="blue">#1A73EB</color>
+
 
 </resources>

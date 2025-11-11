@@ -1,15 +1,13 @@
-package com.blinklab.nedofinder
+package com.blinklab.nedofinder.activities
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.blinklab.nedofinder.R
 import com.blinklab.nedofinder.databinding.ActivityMainBinding
-import com.blinklab.nedofinder.fragment.AddShopFragment
 import com.blinklab.nedofinder.fragment.FavoriteFragment
 import com.blinklab.nedofinder.fragment.HomeFragment
 import com.blinklab.nedofinder.fragment.ProfileFragment
@@ -26,17 +24,13 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
+
+
         /* window.statusBarColor = ContextCompat.getColor(this, R.color.greyScreen )
         val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
         windowInsetsController.isAppearanceLightStatusBars = true*/
 
 
-        print("Hello world!!")
-        print("Hello world!!")
-        print("Hello world!!")
-        print("Hello world!!")
-        print("Hello world!!")
-        print("kotlin")
 
         val navigateTo = intent.getStringExtra("NAVIGATE_TO")
         if (navigateTo == "PROFILE_FRAGMENT") {
@@ -56,10 +50,7 @@ class MainActivity : AppCompatActivity() {
                     loadFragment(FavoriteFragment())
                     true
                 }
-                R.id.add -> {
-                    loadFragment(AddShopFragment())
-                    true
-                }
+
                 R.id.settings -> {
                     loadFragment(ProfileFragment())
                     true
