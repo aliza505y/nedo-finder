@@ -61,6 +61,7 @@ class AuthenticationActivity : AppCompatActivity() {
         googleButton.setOnClickListener {
             signInWithGoogle()
         }
+
     }
 
     private val signInLauncher = registerForActivityResult(

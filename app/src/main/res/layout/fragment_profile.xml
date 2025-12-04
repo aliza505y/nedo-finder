@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="@dimen/_12sdp"
+        android:layout_margin="@dimen/_15sdp"
         android:fontFamily="@font/poppins_bold"
         android:text="Profile"
         android:textColor="@color/blackScreen"
@@ -75,16 +75,17 @@
                 android:id="@+id/addNewShopCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_16sdp"
                 android:clickable="true"
                 android:focusable="true"
-                android:layout_marginTop="@dimen/_16sdp"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="@dimen/_10sdp"
                 app:cardElevation="@dimen/_2sdp"
                 app:contentPadding="@dimen/_11sdp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/ownerProfileImage"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ownerProfileImage">
 
                 <LinearLayout
@@ -102,8 +103,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_2sdp"
                         android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
                         android:fontFamily="@font/poppins_bold"
                         android:text="Add your shop" />
                 </LinearLayout>
@@ -136,6 +137,16 @@
                 tools:itemCount="2"
                 tools:listitem="@layout/manage_store_design" />
 
+            <TextView
+                android:id="@+id/logOut_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Log Out"
+                android:layout_marginEnd="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_100sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ownerShopsRecyclerView" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

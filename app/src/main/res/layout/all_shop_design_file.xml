@@ -21,31 +21,18 @@
             android:src="@drawable/store_1"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- FAVORITE HEART -->
-        <ImageView
-            android:id="@+id/fav_icon"
-            android:layout_width="@dimen/_24sdp"
-            android:layout_height="@dimen/_24sdp"
-            android:src="@drawable/outline_favorite_24"
-            android:padding="@dimen/_5sdp"
-            android:background="@drawable/rounded_white_circle"
-            app:tint="@color/black"
-            app:layout_constraintTop_toTopOf="@id/shop_image"
-            app:layout_constraintEnd_toEndOf="@id/shop_image"
-            android:layout_margin="@dimen/_6sdp" />
-
         <!-- OWNER PROFILE -->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/owner_image"
             android:layout_width="@dimen/_34sdp"
             android:layout_height="@dimen/_34sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
             android:src="@drawable/profile_7"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:layout_marginBottom="@dimen/_4sdp"
-            app:civ_border_width="@dimen/_1sdp"
             app:civ_border_color="@color/white"
-            app:layout_constraintBottom_toBottomOf="@id/shop_image"
-            app:layout_constraintStart_toStartOf="@id/shop_image" />
+            app:civ_border_width="@dimen/_1sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/shop_image" />
 
         <!-- SHOP NAME -->
         <TextView
