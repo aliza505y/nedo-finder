@@ -58,9 +58,11 @@ class AuthenticationActivity : AppCompatActivity() {
         googleLogo = findViewById(R.id.google_logo)
         googleProgress = findViewById(R.id.google_progress)
 
+
         googleButton.setOnClickListener {
             signInWithGoogle()
         }
+
 
     }
 

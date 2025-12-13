@@ -8,35 +8,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:433551306806:android:63d830c4c159a1b560e897",
-        "android_client_info": {
-          "package_name": "com.blinklab.buynow"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "433551306806-hdvv6j130fok45ndtrmuvb79plvrlfn4.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCVVI0tuKlr43PX3LdS66YHp5EiOUCMI3I"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "433551306806-hdvv6j130fok45ndtrmuvb79plvrlfn4.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:433551306806:android:6451824fc7365fda60e897",
         "android_client_info": {
           "package_name": "com.blinklab.nedofinder"
@@ -44,7 +15,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "433551306806-hdvv6j130fok45ndtrmuvb79plvrlfn4.apps.googleusercontent.com",
+          "client_id": "433551306806-d0vl68lnmvjentdcc078lgj9rpioeosq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.blinklab.nedofinder",
+            "certificate_hash": "b6eb1ef2fc683f458bc56b7dfa4e98c123f2cb6e"
+          }
+        },
+        {
+          "client_id": "433551306806-4ba3rebo7t17telt4n4390l1rb2b5snj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -57,36 +36,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "433551306806-hdvv6j130fok45ndtrmuvb79plvrlfn4.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:433551306806:android:2ceba5d4a8537cde60e897",
-        "android_client_info": {
-          "package_name": "com.ninexsol.buyhere"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "433551306806-hdvv6j130fok45ndtrmuvb79plvrlfn4.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCVVI0tuKlr43PX3LdS66YHp5EiOUCMI3I"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "433551306806-hdvv6j130fok45ndtrmuvb79plvrlfn4.apps.googleusercontent.com",
+              "client_id": "433551306806-4ba3rebo7t17telt4n4390l1rb2b5snj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

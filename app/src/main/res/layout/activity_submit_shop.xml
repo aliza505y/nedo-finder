@@ -42,7 +42,7 @@
                 android:textColor="@color/greyScreen" />
 
             <!-- Profile Photo Upload -->
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/owner_profile_image"
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="@dimen/_90sdp"
