@@ -60,11 +60,13 @@ dependencies {
     implementation(libs.googleid)
     implementation(libs.firebase.database)
     implementation(libs.firebase.firestore)
-    //for image storage
-    implementation(libs.firebase.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation("com.google.firebase:firebase-storage:22.0.1")
+
+
     implementation(platform("com.google.firebase:firebase-bom:34.4.0"))
     implementation("com.google.firebase:firebase-analytics")
 
@@ -72,5 +74,9 @@ dependencies {
     // google sign in
     implementation ("com.google.android.gms:play-services-auth")
 
+    // Google Maps SDK
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
 
+    // Location (for current GPS)
+    implementation("com.google.android.gms:play-services-location:21.3.0")
 }
