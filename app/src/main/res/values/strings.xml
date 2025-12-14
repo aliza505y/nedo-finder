@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">NedoFinder</string>
+
+    <string name="google_maps_key">AIzaSyCRTRORrNpWzMWdmoOrqtt3ThsNMwB3A0I</string>
+
+
     <string name="discover">Discover Local\nshops around\nground you</string>
     <string name="explore">Explore unique business, find a\nhidden gems, and support your\ncommunity with wiseh.</string>
     <string name="proximal">Proximal Local\nBusiness Discovery Platform</string>
