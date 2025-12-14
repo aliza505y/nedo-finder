@@ -59,7 +59,7 @@ class AddShopLocationActivity : AppCompatActivity() {
                 "city" to city,
                 "phone" to phone
             )
-            database.reference.child("pending shops").child(auth.currentUser!!.uid)
+            database.reference.child("pending Shops").child(auth.currentUser!!.uid)
                 .updateChildren(locationUpdates)
                 .addOnCompleteListener {
                     if (it.isSuccessful) {

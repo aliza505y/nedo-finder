@@ -57,7 +57,7 @@ class SubmitShopActivity : AppCompatActivity() {
         if (imageUri == null){
             Toast.makeText(this,"Please upload shop image",Toast.LENGTH_SHORT).show()
         }else{
-            val fileRef = storage.reference.child("shop_images/${auth.currentUser!!.uid}")
+            val fileRef = storage.reference.child("shop Images/${auth.currentUser!!.uid}")
             fileRef.putFile(imageUri!!)
             fileRef.downloadUrl.addOnCompleteListener { url ->
                 //upload to realtime database
@@ -66,7 +66,7 @@ class SubmitShopActivity : AppCompatActivity() {
                     "shopDescription" to shopDescription,
                     "ownerImage" to url.result.toString()
                 )
-                database.reference.child("pendingShops").child(auth.currentUser!!.uid)
+                database.reference.child("pending Shops").child(auth.currentUser!!.uid)
                     .updateChildren(locationUpdates)
                     .addOnCompleteListener {
                         Toast.makeText(this, "Shop added for review", Toast.LENGTH_SHORT)

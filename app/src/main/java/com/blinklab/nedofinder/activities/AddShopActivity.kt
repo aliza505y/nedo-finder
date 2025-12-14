@@ -85,12 +85,12 @@ class AddShopActivity : AppCompatActivity() {
         if (imageUri == null) {
             Toast.makeText(this, "select image", Toast.LENGTH_SHORT).show()
         } else {
-            val fileRef = storage.reference.child("shop_images/${auth.currentUser!!.uid}")
+            val fileRef = storage.reference.child("shop Images/${auth.currentUser!!.uid}")
             fileRef.putFile(imageUri!!)
             fileRef.downloadUrl.addOnCompleteListener { url ->
                 //upload to realtime database
                 val shopModel = AddShopDataClass(shopName, selectedCategory, url.result.toString())
-                database.reference.child("pending_shops").child(auth.currentUser!!.uid).setValue(shopModel)
+                database.reference.child("pending Shops").child(auth.currentUser!!.uid).setValue(shopModel)
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
                             Toast.makeText(this, "Shop added successfully", Toast.LENGTH_SHORT)
