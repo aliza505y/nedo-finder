@@ -98,7 +98,7 @@ class PickLocationActivity : AppCompatActivity(), OnMapReadyCallback {
             "longitude" to latLng.longitude
         )
 
-        db.child("pending_shops").child(uid).child(shopId)
+        db.child("pending_shops").child(shopId)
             .updateChildren(updates)
             .addOnSuccessListener {
                 Toast.makeText(this, "Location saved", Toast.LENGTH_SHORT).show()

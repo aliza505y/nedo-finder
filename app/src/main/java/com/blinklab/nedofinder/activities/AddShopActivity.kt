@@ -92,7 +92,7 @@ class AddShopActivity : AppCompatActivity() {
         if (hasError) return
 
         //Create unique shopId under user's node
-        val shopRef = database.reference.child("pending_shops").child(uid).push()
+        val shopRef = database.reference.child("pending_shops").push()
         val shopId = shopRef.key ?: run {
             Toast.makeText(this, "Failed to create shop id", Toast.LENGTH_SHORT).show()
             return
@@ -112,7 +112,7 @@ class AddShopActivity : AppCompatActivity() {
                     shopName = shopName,
                     category = selectedCategory,
                     shopImage = downloadUrl.toString(),
-                    status = "draft" // still in progress
+                    status = "draft"
                 )
 
                 shopRef.setValue(shopModel)

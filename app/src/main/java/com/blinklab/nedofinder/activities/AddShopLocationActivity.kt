@@ -73,7 +73,7 @@ class AddShopLocationActivity : AppCompatActivity() {
             "phone" to phone
         )
 
-        database.reference.child("pending_shops").child(uid).child(shopId)
+        database.reference.child("pending_shops").child(shopId)
             .updateChildren(updates)
             .addOnSuccessListener {
                 Toast.makeText(this, "Step 2 saved", Toast.LENGTH_SHORT).show()
