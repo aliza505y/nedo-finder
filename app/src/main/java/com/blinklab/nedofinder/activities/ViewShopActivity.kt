@@ -90,7 +90,7 @@ class ViewShopActivity : AppCompatActivity() {
             })
     }
 
-    private fun toggleFavourite() {
+    private fun favouriteShops() {
         val uid = auth.currentUser?.uid ?: run {
             Toast.makeText(this, "Please login first", Toast.LENGTH_SHORT).show()
             return
