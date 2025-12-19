@@ -115,6 +115,11 @@ class AddShopActivity : AppCompatActivity() {
                     status = "draft"
                 )
 
+                val updates = hashMapOf<String, Any?>(
+    "pending_shops/$shopId" to shopModel,
+    "user_shops/$uid/$shopId" to true
+)
+
                 shopRef.setValue(shopModel)
                     .addOnSuccessListener {
                         Toast.makeText(this, "Step 1 saved", Toast.LENGTH_SHORT).show()
