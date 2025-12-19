@@ -65,72 +65,62 @@ class AddShopActivity : AppCompatActivity() {
         binding.spinnerMealType.adapter = adapter
     }
 
-    private fun submitShopStep1() {
-        val uid = auth.currentUser?.uid ?: run {
-            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        val shopName = binding.shopName.text.toString().trim()
-        val selectedCategory = if (binding.spinnerMealType.selectedItemPosition > 0)
-            binding.spinnerMealType.selectedItem.toString()
-        else ""
-
-        var hasError = false
-        if (shopName.isEmpty()) {
-            binding.shopName.error = "Shop name is required"
-            hasError = true
-        }
-        if (selectedCategory.isEmpty()) {
-            Toast.makeText(this, "Please select a category", Toast.LENGTH_SHORT).show()
-            hasError = true
-        }
-        if (imageUri == null) {
-            Toast.makeText(this, "Please select shop image", Toast.LENGTH_SHORT).show()
-            hasError = true
-        }
-        if (hasError) return
-
-        //Create unique shopId under user's node
-        val shopRef = database.reference.child("pending_shops").child(uid).push()
-        val shopId = shopRef.key ?: run {
-            Toast.makeText(this, "Failed to create shop id", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        // Upload shop image (unique path so it will not overwrite)
-        val imgRef = storage.reference.child("shops/$uid/$shopId/shop.jpg")
-        imgRef.putFile(imageUri!!)
-            .continueWithTask { task ->
-                if (!task.isSuccessful) throw task.exception ?: Exception("Upload failed")
-                imgRef.downloadUrl
-            }
-            .addOnSuccessListener { downloadUrl ->
-                val shopModel = AddShopDataClass(
-                    shopId = shopId,
-                    ownerId = uid,
-                    shopName = shopName,
-                    category = selectedCategory,
-                    shopImage = downloadUrl.toString(),
-                    status = "draft"
-                )
-
-        database.reference.setValue(shopModel)
-            .addOnSuccessListener {
-                Toast.makeText(this, "Step 1 saved", Toast.LENGTH_SHORT).show()
-                startActivity(
-                    Intent(this, AddShopLocationActivity::class.java)
-                        .putExtra("SHOP_ID", shopId)
-                )
-            }
-            .addOnFailureListener { e ->
-                Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
-            }
+private fun submitShopStep1() {
+    val uid = auth.currentUser?.uid ?: run {
+        Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
+        return
     }
-    .addOnFailureListener { e ->
-        Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+
+    val shopName = binding.shopName.text.toString().trim()
+    val selectedCategory = if (binding.spinnerMealType.selectedItemPosition > 0)
+        binding.spinnerMealType.selectedItem.toString()
+    else ""
+
+    var hasError = false
+    if (shopName.isEmpty()) { binding.shopName.error = "Shop name is required"; hasError = true }
+    if (selectedCategory.isEmpty()) { Toast.makeText(this, "Please select a category", Toast.LENGTH_SHORT).show(); hasError = true }
+    if (imageUri == null) { Toast.makeText(this, "Please select shop image", Toast.LENGTH_SHORT).show(); hasError = true }
+    if (hasError) return
+
+    val shopRef = database.reference.child("pending_shops").child(uid).push()
+    val shopId = shopRef.key ?: run {
+        Toast.makeText(this, "Failed to create shop id", Toast.LENGTH_SHORT).show()
+        return
     }
-    }
+
+    val imgRef = storage.reference.child("shops/$uid/$shopId/shop.jpg")
+    imgRef.putFile(imageUri!!)
+        .continueWithTask { task ->
+            if (!task.isSuccessful) throw task.exception ?: Exception("Upload failed")
+            imgRef.downloadUrl
+        }
+        .addOnSuccessListener { downloadUrl ->
+            val shopModel = AddShopDataClass(
+                shopId = shopId,
+                ownerId = uid,
+                shopName = shopName,
+                category = selectedCategory,
+                shopImage = downloadUrl.toString(),
+                status = "draft"
+            )
+
+            shopRef.setValue(shopModel)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Step 1 saved", Toast.LENGTH_SHORT).show()
+                    startActivity(
+                        Intent(this, AddShopLocationActivity::class.java)
+                            .putExtra("SHOP_ID", shopId)
+                    )
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+                }
+        }
+        .addOnFailureListener { e ->
+            Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+        }
+}
+
 
     private val galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) {
         imageUri = it
