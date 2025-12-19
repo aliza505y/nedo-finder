@@ -73,17 +73,17 @@ class AddShopLocationActivity : AppCompatActivity() {
             "phone" to phone
         )
 
-        database.reference.child("pending_shops").child(uid).child(shopId).push()
-            .updateChildren(updates)
-            .addOnSuccessListener {
-                Toast.makeText(this, "Step 2 saved", Toast.LENGTH_SHORT).show()
-                startActivity(
-                    Intent(this, SubmitShopActivity::class.java)
-                        .putExtra("SHOP_ID", shopId)
-                )
-            }
-            .addOnFailureListener { e ->
-                Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
-            }
+       database.reference.child("pending_shops").child(uid).child(shopId)
+    .updateChildren(updates)
+    .addOnSuccessListener {
+        Toast.makeText(this, "Step 2 saved", Toast.LENGTH_SHORT).show()
+        startActivity(
+            Intent(this, SubmitShopActivity::class.java)
+                .putExtra("SHOP_ID", shopId)
+        )
+    }
+    .addOnFailureListener { e ->
+        Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+    }
     }
 }
