@@ -114,27 +114,26 @@ class AddShopActivity : AppCompatActivity() {
                     shopImage = downloadUrl.toString(),
                     status = "draft"
                 )
+ val updates = hashMapOf<String, Any?>(
+            "pending_shops/$shopId" to shopModel,
+            "user_shops/$uid/$shopId" to true
+        )
 
-                val updates = hashMapOf<String, Any?>(
-    "pending_shops/$shopId" to shopModel,
-    "user_shops/$uid/$shopId" to true
-)
-
-                shopRef.setValue(shopModel)
-                    .addOnSuccessListener {
-                        Toast.makeText(this, "Step 1 saved", Toast.LENGTH_SHORT).show()
-                        startActivity(
-                            Intent(this, AddShopLocationActivity::class.java)
-                                .putExtra("SHOP_ID", shopId)
-                        )
-                    }
-                    .addOnFailureListener { e ->
-                        Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
-                    }
+        database.reference.updateChildren(updates)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Step 1 saved", Toast.LENGTH_SHORT).show()
+                startActivity(
+                    Intent(this, AddShopLocationActivity::class.java)
+                        .putExtra("SHOP_ID", shopId)
+                )
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
             }
+    }
+    .addOnFailureListener { e ->
+        Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+    }
     }
 
     private val galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) {
