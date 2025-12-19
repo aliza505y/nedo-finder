@@ -79,7 +79,7 @@ class SubmitShopActivity : AppCompatActivity() {
                     "createdAt" to System.currentTimeMillis()
                 )
 
-                database.reference.child("pending_shops").child(shopId)
+                database.reference.child("pending_shops").child(uid).child(shopId).push()
                     .updateChildren(updates)
                     .addOnSuccessListener {
                         Toast.makeText(this, "Shop submitted for review", Toast.LENGTH_LONG).show()

@@ -7,12 +7,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil3.load
 import com.blinklab.nedofinder.dataclass.FavDataClass
 import com.blinklab.nedofinder.R
 import com.blinklab.nedofinder.activities.ViewShopActivity
+import com.blinklab.nedofinder.dataclass.AddShopDataClass
 import de.hdodenhof.circleimageview.CircleImageView
 
-class FavAdapter (private val mList: ArrayList<FavDataClass>)
+class FavAdapter (private val mList: ArrayList<AddShopDataClass>)
     : RecyclerView.Adapter<FavAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup,
         viewType: Int
@@ -27,15 +29,15 @@ class FavAdapter (private val mList: ArrayList<FavDataClass>)
         position: Int
     ) {
         val todo= mList[position]
-        holder.imageViewFav.setImageResource(todo.img)
-        holder.profile.setImageResource(todo.prof)
-        holder.nameFAv.text = todo.name
+        holder.imageViewFav.load(todo.shopImage)
+        holder.profile.load(todo.ownerImage)
+        holder.nameFAv.text = todo.ownerName
         holder.categoryFav.text = todo.category
-        holder.reviews.text=todo.review
-        holder.itemView.setOnClickListener {
-            val context = holder.itemView.context
-            context.startActivity(Intent(context, ViewShopActivity::class.java))
-        }
+            holder.itemView.setOnClickListener {
+                val context = holder.itemView.context
+                val intent = Intent(context, ViewShopActivity::class.java).putExtra("shopId",todo.shopId)
+                context.startActivity(intent)
+            }
     }
 
     override fun getItemCount(): Int {

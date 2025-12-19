@@ -7,12 +7,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil3.load
 import com.blinklab.nedofinder.dataclass.AllShopDataClass
 import com.blinklab.nedofinder.R
 import com.blinklab.nedofinder.activities.ViewShopActivity
+import com.blinklab.nedofinder.dataclass.AddShopDataClass
 import de.hdodenhof.circleimageview.CircleImageView
 
-class AllShopAdapter(private val allList: ArrayList<AllShopDataClass>) :
+class AllShopAdapter(private val allList: ArrayList<AddShopDataClass>) :
     RecyclerView.Adapter<AllShopAdapter.ViewHolder>(){
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -39,15 +41,15 @@ class AllShopAdapter(private val allList: ArrayList<AllShopDataClass>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val todo= allList[position]
-        holder.imageViewAll.setImageResource(todo.image)
-        holder.pImageAll.setImageResource(todo.pImage)
-        holder.nameAll.text = todo.name
+        holder.imageViewAll.load(todo.shopImage)
+        holder.pImageAll.load(todo.ownerImage)
+        holder.nameAll.text = todo.shopName
         holder.categoryAll.text = todo.category
         holder.addressAll.text = todo.address
-        holder.imageReview.text=todo.review
+
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
-            val intent = Intent(context, ViewShopActivity::class.java)
+            val intent = Intent(context, ViewShopActivity::class.java).putExtra("shopId",todo.shopId)
             context.startActivity(intent)
         }
 

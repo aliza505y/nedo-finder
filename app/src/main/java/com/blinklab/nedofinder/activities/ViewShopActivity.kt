@@ -6,9 +6,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import coil3.load
 import com.blinklab.nedofinder.R
 import com.blinklab.nedofinder.databinding.ActivityViewShopBinding
-import com.blinklab.nedofinder.dataclass.ShopDataClass
+import com.blinklab.nedofinder.dataclass.AddShopDataClass
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -20,7 +21,7 @@ class ViewShopActivity : AppCompatActivity() {
     private val database = FirebaseDatabase.getInstance().reference
 
     private lateinit var shopId: String
-    private var currentShop: ShopDataClass? = null
+    private var currentShop: AddShopDataClass? = null
     private var isFavourite = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,14 +36,18 @@ class ViewShopActivity : AppCompatActivity() {
             insets
         }
 
-        shopId = intent.getStringExtra("SHOP_ID").orEmpty()
+        shopId = intent.getStringExtra("shopId").orEmpty()
         if (shopId.isBlank()) {
             Toast.makeText(this, "Shop id missing", Toast.LENGTH_SHORT).show()
             finish()
             return
         }
 
-        binding.fvrtBtn.isEnabled = false
+        binding.fvShopBtn.isEnabled = false
+        binding.fvShopBtn.setOnClickListener {
+            favouriteShops()
+
+        }
 
         fetchShopDetailsFromApproved()
 
@@ -53,12 +58,20 @@ class ViewShopActivity : AppCompatActivity() {
         database.child("approved_shops").child(shopId)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    val shop = snapshot.getValue(ShopDataClass::class.java)
+                    val shop = snapshot.getValue(AddShopDataClass::class.java)
                     if (shop == null) {
                         Toast.makeText(this@ViewShopActivity, "Shop not found", Toast.LENGTH_SHORT).show()
                         finish()
                         return
                     }
+                    binding.viewShopStore.load(shop.shopImage)
+                    binding.viewShopProfileImage.load(shop.ownerImage)
+                    binding.viewShopName.text= shop.shopName
+                    binding.allStoreCategory.text = shop.category
+                    binding.shopDescription.text = shop.shopDescription
+                    binding.ownerName.text = shop.phone
+                    binding.address.text = shop.address
+
 
                     currentShop = shop
                     checkFavouriteStatus()
@@ -81,11 +94,11 @@ class ViewShopActivity : AppCompatActivity() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     isFavourite = snapshot.exists()
                     updateHeartIcon()
-                    binding.fvrtBtn.isEnabled = true
+                    binding.fvShopBtn.isEnabled = true
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    binding.fvrtBtn.isEnabled = true
+                    binding.fvShopBtn.isEnabled = true
                 }
             })
     }
@@ -149,9 +162,9 @@ class ViewShopActivity : AppCompatActivity() {
 
     private fun updateHeartIcon() {
         if (isFavourite) {
-            binding.fvrtBtn.setImageResource(R.drawable.ic_heart_filled)
+            binding.fvShopBtn.setImageResource(R.drawable.ic_favourite_filled)
         } else {
-            binding.fvrtBtn.setImageResource(R.drawable.ic_heart_outline)
+            binding.fvShopBtn.setImageResource(R.drawable.outline_favorite_24)
         }
     }
 }

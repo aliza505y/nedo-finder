@@ -44,6 +44,8 @@ android {
 
 dependencies {
 
+    implementation("io.coil-kt.coil3:coil:3.1.0")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.1.0")
     implementation ("com.intuit.sdp:sdp-android:1.1.0")
     implementation ("com.intuit.ssp:ssp-android:1.1.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")

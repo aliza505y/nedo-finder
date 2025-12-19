@@ -9,18 +9,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import com.blinklab.nedofinder.adapter.AllShopAdapter
 import com.blinklab.nedofinder.dataclass.AllShopDataClass
 import com.blinklab.nedofinder.R
 import com.blinklab.nedofinder.databinding.FragmentHomeBinding
-
+import com.blinklab.nedofinder.dataclass.AddShopDataClass
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class HomeFragment : Fragment() {
     private lateinit var  binding: FragmentHomeBinding
-    private lateinit var arrayList: ArrayList<AllShopDataClass>
+    private lateinit var arrayList: ArrayList<AddShopDataClass>
     private lateinit var adapter: AllShopAdapter
+    private val database =  FirebaseDatabase.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,16 +42,7 @@ class HomeFragment : Fragment() {
         arrayList = ArrayList()
         adapter = AllShopAdapter(arrayList)
         binding.allShopsRecycler.adapter = adapter
-        arrayList.add(AllShopDataClass(R.drawable.store_1,R.drawable.profile_7, "Kiryana Stores", "Grocery", "Street/20km stand","4.5"))
-        arrayList.add(AllShopDataClass(R.drawable.store_3,R.drawable.profile_8, "Electric Store", "Electric", "Right Corner/stand","3.0"))
-        arrayList.add(AllShopDataClass(R.drawable.store_5,R.drawable.profile_1, "Dollar Shop", "Money Hub", "Street/20km stand","4.4"))
-        arrayList.add(AllShopDataClass(R.drawable.store_1,R.drawable.profile_8, "Kiryana Stores", "Category", "Street/20km stand","4.1"))
-        arrayList.add(AllShopDataClass(R.drawable.store_3,R.drawable.profile_9, "Electronics", "Category", "Street/20km stand","3.9"))
-        arrayList.add(AllShopDataClass(R.drawable.store_3,R.drawable.profile_8, "Electric Store", "Electric", "Right Corner/stand","3.0"))
-        arrayList.add(AllShopDataClass(R.drawable.store_5,R.drawable.profile_1, "Dollar Shop", "Money Hub", "Street/20km stand","3.5"))
-        arrayList.add(AllShopDataClass(R.drawable.store_1,R.drawable.profile_8, "Kiryana Stores", "Category", "Street/20km stand","3.3"))
-        arrayList.add(AllShopDataClass(R.drawable.store_3,R.drawable.profile_9, "Electronics", "Category", "Street/20km stand","5.0"))
-
+        fetchShopsFromDatabase()
         return binding.root
     }
     @SuppressLint("RestrictedApi")
@@ -76,5 +73,27 @@ class HomeFragment : Fragment() {
                 return true
             }
         })
+    }
+
+    private fun fetchShopsFromDatabase() {
+        database.reference.child("approved_shops")
+            .addValueEventListener(object: ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    arrayList.clear()
+                    for (snap in snapshot.children) {
+                        val shop = snap.getValue(AddShopDataClass::class.java)
+                        arrayList.add(shop!!)
+                    }
+                    adapter.notifyDataSetChanged()
+                }
+
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
+                }
+
+            })
+
+
     }
 }
