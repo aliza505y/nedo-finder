@@ -18,5 +18,10 @@ data class AddShopDataClass(
     val ownerImage: String? = null,
 
     val status: String? = "pending",
-    val createdAt: Long? = System.currentTimeMillis()
+    val createdAt: Long? = System.currentTimeMillis(),
+
+    //admin use only not required in db
+    var _uidKey: String? = null,
+    var _shopKey: String? = null,
+
 )

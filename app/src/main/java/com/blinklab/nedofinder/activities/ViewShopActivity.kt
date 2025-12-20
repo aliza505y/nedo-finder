@@ -1,11 +1,13 @@
 package com.blinklab.nedofinder.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import coil3.Uri
 import coil3.load
 import com.blinklab.nedofinder.R
 import com.blinklab.nedofinder.databinding.ActivityViewShopBinding
@@ -21,6 +23,8 @@ class ViewShopActivity : AppCompatActivity() {
     private val database = FirebaseDatabase.getInstance().reference
 
     private lateinit var shopId: String
+    private lateinit var uid: String
+    private lateinit var phoneNumber: String
     private var currentShop: AddShopDataClass? = null
     private var isFavourite = false
 
@@ -36,7 +40,10 @@ class ViewShopActivity : AppCompatActivity() {
             insets
         }
 
+
         shopId = intent.getStringExtra("shopId").orEmpty()
+        uid = intent.getStringExtra("uid").orEmpty()
+
         if (shopId.isBlank()) {
             Toast.makeText(this, "Shop id missing", Toast.LENGTH_SHORT).show()
             finish()
@@ -49,13 +56,24 @@ class ViewShopActivity : AppCompatActivity() {
 
         }
 
+        binding.callBtn.setOnClickListener {
+            if (phoneNumber.isNotEmpty()){
+                val intent = Intent(Intent.ACTION_DIAL).apply {
+                    data= android.net.Uri.parse(phoneNumber)
+                }
+                startActivity(intent)
+            }else{
+                Toast.makeText(this@ViewShopActivity, "PhoneNumber not found", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         fetchShopDetailsFromApproved()
 
        
     }
 
     private fun fetchShopDetailsFromApproved() {
-        database.child("approved_shops").child(shopId)
+        database.child("approved_shops").child(uid).child(shopId)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val shop = snapshot.getValue(AddShopDataClass::class.java)
@@ -69,9 +87,10 @@ class ViewShopActivity : AppCompatActivity() {
                     binding.viewShopName.text= shop.shopName
                     binding.allStoreCategory.text = shop.category
                     binding.shopDescription.text = shop.shopDescription
-                    binding.ownerName.text = shop.phone
+                    binding.ownerName.text= shop.ownerName
+                    binding.contact.text = shop.phone
                     binding.address.text = shop.address
-
+                    phoneNumber=shop.phone!!
 
                     currentShop = shop
                     checkFavouriteStatus()

@@ -21,6 +21,7 @@ class FavoriteFragment : Fragment() {
     private lateinit var binding: FragmentFavoriteBinding
     private val favList = ArrayList<AddShopDataClass>()
     private lateinit var adapter: FavAdapter
+
     private val  database = FirebaseDatabase.getInstance()
     private  val auth = FirebaseAuth.getInstance()
     override fun onCreateView(

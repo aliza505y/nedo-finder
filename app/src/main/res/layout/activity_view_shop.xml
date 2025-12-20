@@ -208,7 +208,7 @@
 
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/proceed_finalize_btn"
+                android:id="@+id/call_btn"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_48sdp"
                 android:layout_marginHorizontal="@dimen/_8sdp"

@@ -45,7 +45,7 @@
                 app:layout_constraintTop_toTopOf="@id/manage_shop_img" />
 
             <TextView
-                android:id="@+id/manage_store_category"
+                android:id="@+id/shop_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Grocery,Daily Need"

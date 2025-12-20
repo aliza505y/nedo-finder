@@ -35,7 +35,9 @@ class FavAdapter (private val mList: ArrayList<AddShopDataClass>)
         holder.categoryFav.text = todo.category
             holder.itemView.setOnClickListener {
                 val context = holder.itemView.context
-                val intent = Intent(context, ViewShopActivity::class.java).putExtra("shopId",todo.shopId)
+                val intent = Intent(context, ViewShopActivity::class.java)
+                    .putExtra("shopId",todo._shopKey)
+                    .putExtra("uid",todo._uidKey)
                 context.startActivity(intent)
             }
     }

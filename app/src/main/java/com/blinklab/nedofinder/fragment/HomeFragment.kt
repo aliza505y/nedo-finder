@@ -77,23 +77,26 @@ class HomeFragment : Fragment() {
 
     private fun fetchShopsFromDatabase() {
         database.reference.child("approved_shops")
-            .addValueEventListener(object: ValueEventListener {
+            .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     arrayList.clear()
-                    for (snap in snapshot.children) {
-                        val shop = snap.getValue(AddShopDataClass::class.java)
-                        arrayList.add(shop!!)
+                    for (uidSnap in snapshot.children) {
+                        val uidKey = uidSnap.key ?: continue
+
+                        for (shopSnap in uidSnap.children) {
+                            val shop = shopSnap.getValue(AddShopDataClass::class.java) ?: continue
+
+                            shop._uidKey = uidKey
+                            shop._shopKey = shopSnap.key
+
+                            arrayList.add(shop)
+                        }
                     }
                     adapter.notifyDataSetChanged()
                 }
-
-
                 override fun onCancelled(error: DatabaseError) {
                     Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
                 }
-
             })
-
-
     }
 }
