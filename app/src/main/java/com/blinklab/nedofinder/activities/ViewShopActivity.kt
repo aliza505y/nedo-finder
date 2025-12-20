@@ -64,25 +64,26 @@ class ViewShopActivity : AppCompatActivity() {
        
     }
 
-     private fun openDialer(rawNumber: String) {
-        val cleaned = rawNumber.trim()
-            .replace("\\s+".toRegex(), "")
-            .replace("[^0-9+]".toRegex(), "")
+    private fun openDialer(rawNumber: String) {
+    val cleaned = rawNumber.trim()
+        .replace("\\s+".toRegex(), "")
+        .replace("[^0-9+]".toRegex(), "")
 
-        if (cleaned.isBlank()) {
-            Toast.makeText(this, "Phone number not found", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        val intent = Intent(Intent.ACTION_DIAL).apply {
-            data = Uri.parse("tel:$cleaned")
-        }
-        if (intent.resolveActivity(packageManager) != null) {
-            startActivity(intent)
-        } else {
-            Toast.makeText(this, "No dialer app found", Toast.LENGTH_SHORT).show()
-        }
+    if (cleaned.isBlank()) {
+        Toast.makeText(this, "Phone number not available", Toast.LENGTH_SHORT).show()
+        return
     }
+
+    val uri = Uri.parse("tel:$cleaned")
+    val intent = Intent(Intent.ACTION_DIAL, uri)
+
+    try {
+        startActivity(intent)
+    } catch (e: Exception) {
+        Toast.makeText(this, "Dialer not found on device", Toast.LENGTH_SHORT).show()
+    }
+}
+
 
 
     private fun fetchShopDetailsFromApproved() {
