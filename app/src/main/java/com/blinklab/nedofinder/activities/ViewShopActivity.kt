@@ -56,21 +56,34 @@ class ViewShopActivity : AppCompatActivity() {
 
         }
 
-        binding.callBtn.setOnClickListener {
-            if (phoneNumber.isNotEmpty()){
-                val intent = Intent(Intent.ACTION_DIAL).apply {
-                    data= android.net.Uri.parse(phoneNumber)
-                }
-                startActivity(intent)
-            }else{
-                Toast.makeText(this@ViewShopActivity, "PhoneNumber not found", Toast.LENGTH_SHORT).show()
-            }
-        }
+
+                binding.callBtn.setOnClickListener { openDialer(phoneNumber) }
 
         fetchShopDetailsFromApproved()
 
        
     }
+
+     private fun openDialer(rawNumber: String) {
+        val cleaned = rawNumber.trim()
+            .replace("\\s+".toRegex(), "")
+            .replace("[^0-9+]".toRegex(), "")
+
+        if (cleaned.isBlank()) {
+            Toast.makeText(this, "Phone number not found", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val intent = Intent(Intent.ACTION_DIAL).apply {
+            data = Uri.parse("tel:$cleaned")
+        }
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        } else {
+            Toast.makeText(this, "No dialer app found", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     private fun fetchShopDetailsFromApproved() {
         database.child("approved_shops").child(uid).child(shopId)
@@ -93,6 +106,7 @@ class ViewShopActivity : AppCompatActivity() {
                     phoneNumber=shop.phone!!
 
                     currentShop = shop
+                     binding.callBtn.isEnabled = phoneNumber.isNotBlank()
                     checkFavouriteStatus()
                 }
 
