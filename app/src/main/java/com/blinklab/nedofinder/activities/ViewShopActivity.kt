@@ -56,6 +56,26 @@ class ViewShopActivity : AppCompatActivity() {
 
         }
 
+        binding.getDirectionCard.setOnClickListener {
+        val shop = currentShop ?: return@setOnClickListener
+
+        val lat = shop.latitude
+        val lng = shop.longitude
+
+        if (lat == null || lng == null) {
+        Toast.makeText(this, "Location not available", Toast.LENGTH_SHORT).show()
+        return@setOnClickListener
+        }
+
+        val intent = Intent(this, PickLocationActivity::class.java)
+        .putExtra("VIEW_MODE", true)
+        .putExtra("LAT", lat)
+        .putExtra("LNG", lng)
+
+        startActivity(intent)
+        }
+
+
 
                 binding.callBtn.setOnClickListener { openDialer(phoneNumber) }
 
