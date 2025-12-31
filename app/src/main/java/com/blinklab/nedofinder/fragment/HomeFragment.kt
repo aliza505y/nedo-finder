@@ -17,8 +17,8 @@ import com.google.firebase.database.*
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var arrayList: ArrayList<AddShopDataClass>      // full list
-    private lateinit var filteredList: ArrayList<AddShopDataClass>   // shown list
+    private lateinit var arrayList: ArrayList<AddShopDataClass>     
+    private lateinit var filteredList: ArrayList<AddShopDataClass>   
     private lateinit var adapter: AllShopAdapter
     private val database = FirebaseDatabase.getInstance()
 
