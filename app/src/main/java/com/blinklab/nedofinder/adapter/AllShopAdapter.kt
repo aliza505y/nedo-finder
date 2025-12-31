@@ -47,13 +47,24 @@ class AllShopAdapter(private val allList: ArrayList<AddShopDataClass>) :
         holder.categoryAll.text = todo.category
         holder.addressAll.text = todo.address
 
-        holder.itemView.setOnClickListener {
-            val context = holder.itemView.context
-            val intent = Intent(context, ViewShopActivity::class.java)
-                .putExtra("shopId",todo._shopKey)
-                .putExtra("uid",todo._uidKey)
-            context.startActivity(intent)
-        }
+       holder.itemView.setOnClickListener {
+    val context = holder.itemView.context
+
+    val shopId = todo._shopKey ?: todo.shopId
+    val uid = todo._uidKey ?: todo.ownerId
+
+    if (shopId.isNullOrBlank() || uid.isNullOrBlank()) {
+        Toast.makeText(context, "Shop id missing", Toast.LENGTH_SHORT).show()
+        return@setOnClickListener
+    }
+
+    val intent = Intent(context, ViewShopActivity::class.java)
+        .putExtra("shopId", shopId)
+        .putExtra("uid", uid)
+
+    context.startActivity(intent)
+}
+
 
     }
 
