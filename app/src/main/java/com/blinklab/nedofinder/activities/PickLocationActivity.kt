@@ -1,22 +1,20 @@
 package com.blinklab.nedofinder.activities
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.blinklab.nedofinder.R
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
-import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class PickLocationActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -27,9 +25,12 @@ class PickLocationActivity : AppCompatActivity(), OnMapReadyCallback {
     private var selectedLatLng: LatLng? = null
     private var marker: Marker? = null
 
-    private val shopId: String by lazy {
-        intent.getStringExtra("SHOP_ID") ?: ""
-    }
+    private val shopId: String by lazy { intent.getStringExtra("SHOP_ID").orEmpty() }
+    private val ownerUid: String by lazy { intent.getStringExtra("UID").orEmpty() } 
+    private val isViewMode: Boolean by lazy { intent.getBooleanExtra("VIEW_MODE", false) }
+
+    private var viewLat: Double? = null
+    private var viewLng: Double? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,31 +40,38 @@ class PickLocationActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.mapFragment) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        findViewById<Button>(R.id.btnSaveLocation).setOnClickListener {
-            saveLocationToFirebase()
+        val saveBtn = findViewById<Button>(R.id.btnSaveLocation)
+
+        if (isViewMode) {
+            saveBtn.visibility = View.GONE
+
+            viewLat = intent.getDoubleExtra("LAT", Double.NaN).takeIf { !it.isNaN() }
+            viewLng = intent.getDoubleExtra("LNG", Double.NaN).takeIf { !it.isNaN() }
+
+        } else {
+            saveBtn.setOnClickListener { saveLocationToFirebase() }
         }
     }
 
     override fun onMapReady(map: GoogleMap) {
         googleMap = map
 
-        // When user taps the map, place/move marker
+        if (isViewMode) {
+            showShopMarkerOnMap()
+            return
+        }
+
         googleMap.setOnMapClickListener { latLng ->
             selectedLatLng = latLng
-
             if (marker == null) {
                 marker = googleMap.addMarker(
-                    MarkerOptions()
-                        .position(latLng)
-                        .title("Selected Shop Location")
-                        .draggable(true)
+                    MarkerOptions().position(latLng).title("Selected Shop Location").draggable(true)
                 )
             } else {
                 marker?.position = latLng
             }
         }
 
-        // If user drags marker update selectedLatLng
         googleMap.setOnMarkerDragListener(object : GoogleMap.OnMarkerDragListener {
             override fun onMarkerDragStart(p0: Marker) {}
             override fun onMarkerDrag(p0: Marker) {}
@@ -72,9 +80,27 @@ class PickLocationActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         })
 
-        // move camera to some default location
-        val defaultLatLng = LatLng(29.3956, 71.6836) // (Bahawalpur)
+        val defaultLatLng = LatLng(29.3956, 71.6836) // Bahawalpur
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLatLng, 14f))
+    }
+
+    private fun showShopMarkerOnMap() {
+        val lat = viewLat
+        val lng = viewLng
+
+        if (lat == null || lng == null) {
+            Toast.makeText(this, "Location not available", Toast.LENGTH_SHORT).show()
+            // Default camera
+            val defaultLatLng = LatLng(29.3956, 71.6836)
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLatLng, 14f))
+            return
+        }
+
+        val shopLatLng = LatLng(lat, lng)
+        marker = googleMap.addMarker(
+            MarkerOptions().position(shopLatLng).title("Shop Location")
+        )
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(shopLatLng, 16f))
     }
 
     private fun saveLocationToFirebase() {
